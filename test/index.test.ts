@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest'
 import { createAutocomplete } from '@unocss/autocomplete'
 import { presetScrollbar } from '../src'
 
-describe('scrollbar', () => {
-  const generator = createGenerator({
+describe('scrollbar', async () => {
+  const generator = await createGenerator({
     presets: [
       presetUno({
         preflight: false,
@@ -51,7 +51,7 @@ describe('scrollbar', () => {
   })
 
   it('custom value to unit', async () => {
-    const generator = createGenerator({
+    const generator = await createGenerator({
       presets: [
         presetUno({
           preflight: false,
@@ -78,7 +78,7 @@ describe('scrollbar', () => {
   })
 
   it('var prefix', async () => {
-    const generator = createGenerator({
+    const generator = await createGenerator({
       presets: [
         presetUno({
           preflight: false,
@@ -122,7 +122,7 @@ describe('scrollbar', () => {
   })
 
   it('presetUno prefix', async () => {
-    const generator = createGenerator({
+    const generator = await createGenerator({
       presets: [
         presetUno({
           preflight: false,
@@ -140,7 +140,7 @@ describe('scrollbar', () => {
   })
 
   it('preset set prefix', async () => {
-    const generator = createGenerator({
+    const generator = await createGenerator({
       presets: [
         presetScrollbar({
           prefix: 'un-',

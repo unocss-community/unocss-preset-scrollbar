@@ -108,8 +108,10 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         'scrollbar', [
           { overflow: 'auto' },
           'scrollbar-custom-property',
-          'scrollbar-width-auto',
-          `scrollbar-color-[var(${resolveVar('thumb')})_var(${resolveVar('track')})]`,
+          ...config.noCompatible ? [] : [
+            'scrollbar-width-auto',
+            `scrollbar-color-[var(${resolveVar('thumb')})_var(${resolveVar('track')})]`,
+          ],
           `scrollbar-track:scrollbar-background-color-[var(${resolveVar('track')})]`,
           `scrollbar-thumb:scrollbar-background-color-[var(${resolveVar('thumb')})]`,
           `scrollbar:scrollbar-width-[var(${resolveVar('width')})]`,
@@ -123,11 +125,11 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         `,
       ],
       [
-        'scrollbar-thin', `
-          scrollbar-w-8px
-          scrollbar-h-8px
-          scrollbar-width-thin
-        `,
+        'scrollbar-thin', [ 
+          'scrollbar-w-8px',
+          'scrollbar-h-8px',
+          ...config.noCompatible ? [] : ['scrollbar-width-thin'],
+        ],
       ],
       [
         'scrollbar-none', `

@@ -31,7 +31,7 @@ export default defineConfig({
 ```
 
 ```html
-<div 
+<div
   class="scrollbar scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
 />
 ```
@@ -100,7 +100,6 @@ export default defineConfig({
 |`varPrefix`|`''`|the css variable prefix of this preset|
 |`prefix`|`''`|Apply prefix to all utilities and shortcuts|
 |`noCompatible`|`'true'`|if `false`, it use `scrollbar-width` and `scrollbar-color`，work in Firefox, but `scrollbar-h`, `scrollbar-w` and `scrollbar-radius` will not work |
-
 
 for example
 

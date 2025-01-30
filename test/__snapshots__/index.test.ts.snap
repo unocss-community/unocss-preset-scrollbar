@@ -37,7 +37,7 @@ exports[`scrollbar > scrollbar 1`] = `
 
 exports[`scrollbar > scrollbar color 1`] = `
 "/* layer: default */
-.scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgba(248,113,113,var(--un-scrollbar-track-opacity));}"
+.scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgb(248 113 113 / var(--un-scrollbar-track-opacity));}"
 `;
 
 exports[`scrollbar > scrollbar custom unit 1`] = `
@@ -47,17 +47,17 @@ exports[`scrollbar > scrollbar custom unit 1`] = `
 
 exports[`scrollbar > should work in atributify mode 1`] = `
 "/* layer: shortcuts */
-[scrollbar~=\\"\\\\~\\"]{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
-[scrollbar~=\\"\\\\~\\"]::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
-[scrollbar~=\\"\\\\~\\"]::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
-[scrollbar~=\\"\\\\~\\"]::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}
-[scrollbar~=\\"rounded\\"]::-webkit-scrollbar-thumb{border-radius:var(--scrollbar-thumb-radius);}
-[scrollbar~=\\"rounded\\"]::-webkit-scrollbar-track{border-radius:var(--scrollbar-track-radius);}
+[scrollbar~="\\~"]{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
+[scrollbar~="\\~"]::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
+[scrollbar~="\\~"]::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
+[scrollbar~="\\~"]::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}
+[scrollbar~="rounded"]::-webkit-scrollbar-thumb{border-radius:var(--scrollbar-thumb-radius);}
+[scrollbar~="rounded"]::-webkit-scrollbar-track{border-radius:var(--scrollbar-track-radius);}
 /* layer: default */
 .w-4px{width:4px;}
 .rounded{border-radius:0.25rem;}
-[scrollbar~=\\"radius-2\\"]{--scrollbar-track-radius:0.5rem;--scrollbar-thumb-radius:0.5rem;}
-[scrollbar~=\\"w-4px\\"]{--scrollbar-width:4px;}"
+[scrollbar~="radius-2"]{--scrollbar-track-radius:0.5rem;--scrollbar-thumb-radius:0.5rem;}
+[scrollbar~="w-4px"]{--scrollbar-width:4px;}"
 `;
 
 exports[`scrollbar > var prefix 1`] = `

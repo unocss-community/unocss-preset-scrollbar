@@ -9,16 +9,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v4
 
-      - name: Set node version to v16
-        uses: actions/setup-node@v2
+      - name: Set node LTS
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
-          cache: pnpm
+          node-version: lts/*
 
       - run: npx conventional-github-releaser -p angular
         env:

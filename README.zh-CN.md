@@ -31,7 +31,7 @@ export default defineConfig({
 ```
 
 ```html
-<div 
+<div
   class="scrollbar scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
 />
 ```
@@ -97,10 +97,9 @@ export default defineConfig({
 |`scrollbarTrackColor`|`#f5f5f5`|默认的滚动条轨迹的背景色|
 |`scrollbarThumbColor`|`#ddd`|默认的滚动条滑块的背景色|
 |`numberToUnit`|``value => `${value / 4}rem` ``|捕获到的数字转化成单位的方法|
-|`varPrefix`|`''`|该预设生成的`css`变量的前缀| 
+|`varPrefix`|`''`|该预设生成的`css`变量的前缀|
 |`prefix`|`''`|该预设生成的shortcuts加上前缀|
 |`noCompatible`|`'true'`|如果为 `false` 的话 会使用 `scrollbar-width` 和 `scrollbar-color` 这两个规则，能够在Firefox上兼容, 但是`scrollbar-h`、`scrollbar-w` 以及 `scrollbar-raidus` 会失效 |
-
 
 举个例子
 

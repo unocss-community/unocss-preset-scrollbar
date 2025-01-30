@@ -1,7 +1,8 @@
 {
   "name": "unocss-preset-scrollbar",
+  "type": "module",
   "version": "0.3.1",
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@9.15.4",
   "description": "unocss preset for scrollbar",
   "author": "kkopite <kkopitehong@foxmail.com>",
   "license": "MIT",
@@ -42,30 +43,31 @@
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
+    "test:update": "vitest -u",
     "typecheck": "tsc --noEmit",
     "play": "npm -C playground run dev"
   },
   "peerDependencies": {
-    "unocss": ">= 0.31.13 < 1"
+    "unocss": ">= 0.31.13"
   },
   "dependencies": {
-    "@unocss/preset-mini": "^0.56.0"
+    "@unocss/preset-mini": "^65.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.43.0",
-    "@antfu/ni": "^0.21.8",
-    "@babel/types": "^7.22.19",
-    "@types/node": "^18.17.18",
-    "@unocss/autocomplete": "^0.56.0",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.49.0",
-    "esno": "^0.17.0",
-    "pnpm": "^8.7.6",
-    "rimraf": "^5.0.1",
-    "typescript": "^5.2.2",
-    "unbuild": "^2.0.0",
-    "unocss": "^0.56.0",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.4"
+    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/ni": "^23.2.0",
+    "@babel/types": "^7.26.5",
+    "@types/node": "^22.10.6",
+    "@unocss/autocomplete": "^65.4.0",
+    "bumpp": "^9.10.0",
+    "eslint": "^9.18.0",
+    "esno": "^4.8.0",
+    "pnpm": "^9.11.0",
+    "rimraf": "^5.0.8",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.1",
+    "unocss": "^65.4.0",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
   }
 }

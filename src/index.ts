@@ -1,3 +1,4 @@
+/* eslint-disable regexp/no-useless-lazy */
 import type { Preset } from 'unocss'
 import { colorResolver, handler } from '@unocss/preset-mini/utils'
 
@@ -71,7 +72,7 @@ export interface PresetScrollbarDefaultOption {
   /**
    * if false will use scrollbar-color and scrollbar-width, rounded and scrollbar-w, scrollbar-h and scrollbar-radius will not work
    * if true, won't have any effect in Firefox
-   * 
+   *
    * @default true
    */
   noCompatible?: boolean
@@ -105,7 +106,8 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
     prefix: config.prefix,
     shortcuts: [
       [
-        'scrollbar', [
+        'scrollbar',
+        [
           { overflow: 'auto' },
           'scrollbar-custom-property',
           'scrollbar-width-auto',
@@ -117,20 +119,23 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         ],
       ],
       [
-        'scrollbar-rounded', `
+        'scrollbar-rounded',
+        `
           scrollbar-track:scrollbar-border-radius-[var(${resolveVar('track-radius')})]
           scrollbar-thumb:scrollbar-border-radius-[var(${resolveVar('thumb-radius')})]
         `,
       ],
       [
-        'scrollbar-thin', `
+        'scrollbar-thin',
+        `
           scrollbar-w-8px
           scrollbar-h-8px
           scrollbar-width-thin
         `,
       ],
       [
-        'scrollbar-none', `
+        'scrollbar-none',
+        `
           scrollbar:hidden
           scrollbar-width-none
         `,
@@ -158,9 +163,9 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
       [
         /^scrollbar-color-(.+)$/,
         ([_, prop]) => {
-          if (config.noCompatible) 
+          if (config.noCompatible)
             return {}
-          
+
           // when use scrollbar-color, ::-webkit-scrollbar styling is disabled.
           // https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
           return {
@@ -172,7 +177,7 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         /^scrollbar-width-(auto|thin|none)/,
         ([_, prop]) => {
           const res: Record<string, string> = {}
-          if (!config.noCompatible || prop === 'none') 
+          if (!config.noCompatible || prop === 'none')
             res['scrollbar-width'] = prop
           return res
         },
@@ -199,7 +204,7 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         { autocomplete: 'scrollbar-track-color-$colors' },
       ],
       [
-        /^scrollbar-(width|height|background\-color|border\-radius|)-(\[var.+\])$/,
+        /^scrollbar-(width|height|background-color|border-radius)-(\[var.+\])$/,
         ([_, prop, value]) => {
           return {
             [`${prop}`]: handler.bracket(value),

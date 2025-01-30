@@ -1,6 +1,6 @@
+import { createAutocomplete } from '@unocss/autocomplete'
 import { createGenerator, presetAttributify, presetUno } from 'unocss'
 import { describe, expect, it } from 'vitest'
-import { createAutocomplete } from '@unocss/autocomplete'
 import { presetScrollbar } from '../src'
 
 describe('scrollbar', async () => {
@@ -130,7 +130,7 @@ describe('scrollbar', async () => {
         }),
         presetScrollbar(),
       ],
-    }) 
+    })
     const {
       css,
     } = await generator.generate([
@@ -146,7 +146,7 @@ describe('scrollbar', async () => {
           prefix: 'un-',
         }),
       ],
-    }) 
+    })
     const {
       css,
     } = await generator.generate([

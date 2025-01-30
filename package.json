@@ -1,5 +1,6 @@
 {
   "name": "unocss-preset-scrollbar",
+  "type": "module",
   "version": "0.3.1",
   "packageManager": "pnpm@9.15.4",
   "description": "unocss preset for scrollbar",

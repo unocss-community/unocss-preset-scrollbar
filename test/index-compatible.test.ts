@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
 import { createGenerator } from 'unocss'
+import { describe, expect, it } from 'vitest'
 import { presetScrollbar } from '../src'
 
 describe('scrollbar (compatible)', async () => {
@@ -31,5 +31,4 @@ describe('scrollbar (compatible)', async () => {
     ])
     expect(css).toMatchSnapshot()
   })
-
 })

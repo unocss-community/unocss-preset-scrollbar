@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { createGenerator } from 'unocss'
 import { presetScrollbar } from '../src'
 
-describe('scrollbar (compatible)', () => {
-  const generator = createGenerator({
+describe('scrollbar (compatible)', async () => {
+  const generator = await createGenerator({
     presets: [
       presetScrollbar({
         noCompatible: false,

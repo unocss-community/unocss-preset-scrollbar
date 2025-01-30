@@ -111,9 +111,9 @@ describe('scrollbar', async () => {
     ).toMatchInlineSnapshot(`
       {
         "sccrollbar-thumb-radius-": "",
-        "scrollbar-": "scrollbar-none scrollbar-rounded scrollbar-thin scrollbar-track-color-red scrollbar-w-4px scrollbar-radius-2 scrollbar-w-1px",
+        "scrollbar-": "scrollbar-none scrollbar-rounded scrollbar-thin scrollbar-thumb-color-amber scrollbar-thumb-color-black scrollbar-thumb-color-blue scrollbar-thumb-color-bluegray scrollbar-thumb-color-blueGray scrollbar-thumb-color-coolgray scrollbar-thumb-color-coolGray",
         "scrollbar-radius-": "scrollbar-radius-2 scrollbar-radius-0 scrollbar-radius-1 scrollbar-radius-3 scrollbar-radius-4 scrollbar-radius-5 scrollbar-radius-6 scrollbar-radius-8 scrollbar-radius-10 scrollbar-radius-12",
-        "scrollbar-thumb-": "",
+        "scrollbar-thumb-": "scrollbar-thumb-radius-0 scrollbar-thumb-radius-1 scrollbar-thumb-radius-2 scrollbar-thumb-radius-3 scrollbar-thumb-radius-4 scrollbar-thumb-radius-5 scrollbar-thumb-radius-6 scrollbar-thumb-radius-8 scrollbar-thumb-radius-10 scrollbar-thumb-radius-12",
         "scrollbar-thumb-color-": "scrollbar-thumb-color-amber scrollbar-thumb-color-black scrollbar-thumb-color-blue scrollbar-thumb-color-bluegray scrollbar-thumb-color-blueGray scrollbar-thumb-color-coolgray scrollbar-thumb-color-coolGray scrollbar-thumb-color-current scrollbar-thumb-color-cyan scrollbar-thumb-color-dark",
         "scrollbar-track-color-": "scrollbar-track-color-amber scrollbar-track-color-black scrollbar-track-color-blue scrollbar-track-color-bluegray scrollbar-track-color-blueGray scrollbar-track-color-coolgray scrollbar-track-color-coolGray scrollbar-track-color-current scrollbar-track-color-cyan scrollbar-track-color-dark",
         "scrollbar-w-": "scrollbar-w-4px scrollbar-w-1px scrollbar-w-0 scrollbar-w-1 scrollbar-w-2 scrollbar-w-3 scrollbar-w-4 scrollbar-w-5 scrollbar-w-6 scrollbar-w-8",

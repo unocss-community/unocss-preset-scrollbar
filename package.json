@@ -46,7 +46,7 @@
     "play": "npm -C playground run dev"
   },
   "peerDependencies": {
-    "unocss": ">= 0.31.13 < 1 || >= 65.4.0"
+    "unocss": ">= 0.31.13"
   },
   "dependencies": {
     "@unocss/preset-mini": "^65.4.0"

@@ -86,7 +86,6 @@ describe('scrollbar', async () => {
       await enumerateSuggestions([
         'scrollbar-',
         'scrollbar-w-',
-        'sccrollbar-thumb-radius-',
         'scrollbar-radius-',
         'scrollbar-track-color-',
         'scrollbar-thumb-color-',
@@ -94,7 +93,6 @@ describe('scrollbar', async () => {
       ]),
     ).toMatchInlineSnapshot(`
       {
-        "sccrollbar-thumb-radius-": [],
         "scrollbar-": [
           "scrollbar-custom-property",
           "scrollbar-none",

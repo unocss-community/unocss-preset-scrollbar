@@ -4,7 +4,6 @@
     "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
-    "verbatimModuleSyntax": true,
     "paths": {
       "unocss-preset-scrollbar": [
         "./src/index.ts"
@@ -13,6 +12,7 @@
     "resolveJsonModule": true,
     "strict": true,
     "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },

@@ -56,7 +56,7 @@ const defaultOption: Required<PresetScrollbarDefaultOption> = {
   scrollbarTrackColor: '#f5f5f5',
   scrollbarThumbColor: '#ddd',
   varPrefix: '',
-  compatible: true,
+  compatible: false,
 }
 
 const customRules = {

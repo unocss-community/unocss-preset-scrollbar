@@ -2,7 +2,7 @@
 
 exports[`scrollbar > presetWind3 prefix 1`] = `
 "/* layer: shortcuts */
-.scrollbar{scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);scrollbar-width:auto;--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
+.scrollbar{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
 .scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
 .scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
 .scrollbar::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}"
@@ -10,7 +10,7 @@ exports[`scrollbar > presetWind3 prefix 1`] = `
 
 exports[`scrollbar > scrollbar 1`] = `
 "/* layer: shortcuts */
-.scrollbar{scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);scrollbar-width:auto;--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
+.scrollbar{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
 .scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
 .scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
 .scrollbar::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}
@@ -28,7 +28,7 @@ exports[`scrollbar > scrollbar custom unit 1`] = `
 
 exports[`scrollbar > should work in atributify mode 1`] = `
 "/* layer: shortcuts */
-[scrollbar~="\\~"]{scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);scrollbar-width:auto;--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
+[scrollbar~="\\~"]{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
 [scrollbar~="\\~"]::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
 [scrollbar~="\\~"]::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
 [scrollbar~="\\~"]::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}
@@ -43,7 +43,7 @@ exports[`scrollbar > should work in atributify mode 1`] = `
 
 exports[`scrollbar > var prefix 1`] = `
 "/* layer: shortcuts */
-.scrollbar{scrollbar-color:var(--my-custom-prefix-scrollbar-thumb) var(--my-custom-prefix-scrollbar-track);scrollbar-width:auto;--my-custom-prefix-scrollbar-track:#f5f5f5;--my-custom-prefix-scrollbar-thumb:#ddd;--my-custom-prefix-scrollbar-width:8px;--my-custom-prefix-scrollbar-height:8px;--my-custom-prefix-scrollbar-track-radius:4px;--my-custom-prefix-scrollbar-thumb-radius:4px;overflow:auto;}
+.scrollbar{--my-custom-prefix-scrollbar-track:#f5f5f5;--my-custom-prefix-scrollbar-thumb:#ddd;--my-custom-prefix-scrollbar-width:8px;--my-custom-prefix-scrollbar-height:8px;--my-custom-prefix-scrollbar-track-radius:4px;--my-custom-prefix-scrollbar-thumb-radius:4px;overflow:auto;}
 .scrollbar::-webkit-scrollbar{width:var(--my-custom-prefix-scrollbar-width);height:var(--my-custom-prefix-scrollbar-height);}
 .scrollbar::-webkit-scrollbar-thumb{background-color:var(--my-custom-prefix-scrollbar-thumb);}
 .scrollbar::-webkit-scrollbar-track{background-color:var(--my-custom-prefix-scrollbar-track);}

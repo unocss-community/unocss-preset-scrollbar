@@ -6,7 +6,7 @@ describe('scrollbar (compatible)', async () => {
   const uno = await createGenerator({
     presets: [
       presetScrollbar({
-        compatible: false,
+        compatible: true,
       }),
     ],
   })

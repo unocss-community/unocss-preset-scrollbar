@@ -164,7 +164,7 @@ export function presetScrollbar(option?: PresetScrollbarDefaultOption): Preset {
         /^scrollbar-color-(.+)$/,
         ([_, prop]) => {
           if (config.noCompatible)
-            return {}
+            return
 
           // when use scrollbar-color, ::-webkit-scrollbar styling is disabled.
           // https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar

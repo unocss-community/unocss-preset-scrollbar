@@ -191,7 +191,7 @@ export function presetScrollbar(option: PresetScrollbarDefaultOption = {}): Pres
       [
         new RegExp(`^scrollbar-(${Object.keys(customRules).join('|')})-(.+)$`),
         ([_, type, value]) => {
-          const val = h.bracket.cssvar.numberWithUnit.px.rem(value)
+          const val = h.bracket.cssvar.numberWithUnit.rem(value)
           const vars = customRules[type as keyof typeof customRules].map(resolveVar)
 
           return vars.reduce((acc: any, k) => {

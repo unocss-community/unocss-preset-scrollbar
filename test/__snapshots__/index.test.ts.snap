@@ -17,7 +17,7 @@ exports[`scrollbar > scrollbar 1`] = `
 .scrollbar-rounded::-webkit-scrollbar-thumb{border-radius:var(--scrollbar-thumb-radius);}
 .scrollbar-rounded::-webkit-scrollbar-track{border-radius:var(--scrollbar-track-radius);}
 /* layer: default */
-.scrollbar-radius-2{--scrollbar-track-radius:2px;--scrollbar-thumb-radius:2px;}
+.scrollbar-radius-2{--scrollbar-track-radius:0.5rem;--scrollbar-thumb-radius:0.5rem;}
 .scrollbar-w-4px{--scrollbar-width:4px;}"
 `;
 
@@ -37,7 +37,7 @@ exports[`scrollbar > should work in atributify mode 1`] = `
 /* layer: default */
 .w-4px{width:4px;}
 .rounded{border-radius:0.25rem;}
-[scrollbar~="radius-2"]{--scrollbar-track-radius:2px;--scrollbar-thumb-radius:2px;}
+[scrollbar~="radius-2"]{--scrollbar-track-radius:0.5rem;--scrollbar-thumb-radius:0.5rem;}
 [scrollbar~="w-4px"]{--scrollbar-width:4px;}"
 `;
 
@@ -51,5 +51,5 @@ exports[`scrollbar > var prefix 1`] = `
 .scrollbar-rounded::-webkit-scrollbar-track{border-radius:var(--my-custom-prefix-scrollbar-track-radius);}
 /* layer: default */
 .scrollbar-thumb-radius-2px{--my-custom-prefix-scrollbar-thumb-radius:2px;}
-.scrollbar-w-1{--my-custom-prefix-scrollbar-width:1px;}"
+.scrollbar-w-1{--my-custom-prefix-scrollbar-width:0.25rem;}"
 `;

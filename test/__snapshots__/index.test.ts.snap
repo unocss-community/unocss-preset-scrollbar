@@ -21,6 +21,13 @@ exports[`scrollbar > scrollbar 1`] = `
 .scrollbar-w-4px{--scrollbar-width:4px;}"
 `;
 
+exports[`scrollbar > scrollbar color 1`] = `
+"/* layer: default */
+.scrollbar-thumb-color-red-800{--un-scrollbar-thumb-opacity:1;--scrollbar-thumb:rgb(153 27 27 / var(--un-scrollbar-thumb-opacity));}
+.scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgb(248 113 113 / var(--un-scrollbar-track-opacity));}
+.scrollbar-track-op-80{--scrollbar-track-opacity:0.8;}"
+`;
+
 exports[`scrollbar > scrollbar custom unit 1`] = `
 "/* layer: default */
 .scrollbar-w-1px{--scrollbar-width:1px;}"

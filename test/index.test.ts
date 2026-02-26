@@ -34,8 +34,6 @@ describe('scrollbar', async () => {
     ])
 
     expect(css).toMatchSnapshot()
-
-    // const { css: css2 } = await uno.generate('scrollbar-color-[var(--my-custom-prefix-scrollbar-thumb)_var(--my-custom-prefix-scrollbar-track)]')
   })
 
   it('scrollbar color', async () => {
@@ -44,12 +42,7 @@ describe('scrollbar', async () => {
       'scrollbar-track-op-80',
       'scrollbar-thumb-color-red-800',
     ])
-    expect(css).toMatchInlineSnapshot(`
-      "/* layer: default */
-      .scrollbar-thumb-color-red-800{--un-scrollbar-thumb-opacity:1;--scrollbar-thumb:rgb(153 27 27 / var(--un-scrollbar-thumb-opacity));}
-      .scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgb(248 113 113 / var(--un-scrollbar-track-opacity));}
-      .scrollbar-track-op-80{--scrollbar-track-opacity:0.8;}"
-    `)
+    expect(css).toMatchSnapshot()
   })
 
   it('scrollbar custom unit', async () => {

@@ -1,8 +1,8 @@
+ignoreWorkspaceRootCheck: true
+
 shamefullyHoist: true
 
 shellEmulator: true
-
-ignoreWorkspaceRootCheck: true
 
 trustPolicy: no-downgrade
 

@@ -1,20 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`scrollbar > custom value to unit 1`] = `
-"/* layer: default */
-.scrollbar-thumb-radius-2px{--scrollbar-thumb-radius:2px;}
-.scrollbar-w-1{--scrollbar-width:2px;}"
-`;
-
-exports[`scrollbar > preset set prefix 1`] = `
-"/* layer: default */
-.un-scrollbar{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
-.un-scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
-.un-scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
-.un-scrollbar::-webkit-scrollbar-track{background-color:var(--scrollbar-track);}"
-`;
-
-exports[`scrollbar > presetUno prefix 1`] = `
+exports[`scrollbar > presetWind3 prefix 1`] = `
 "/* layer: shortcuts */
 .scrollbar{--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;overflow:auto;}
 .scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
@@ -37,7 +23,9 @@ exports[`scrollbar > scrollbar 1`] = `
 
 exports[`scrollbar > scrollbar color 1`] = `
 "/* layer: default */
-.scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgb(248 113 113 / var(--un-scrollbar-track-opacity));}"
+.scrollbar-thumb-color-red-800{--un-scrollbar-thumb-opacity:1;--scrollbar-thumb:rgb(153 27 27 / var(--un-scrollbar-thumb-opacity));}
+.scrollbar-track-color-red{--un-scrollbar-track-opacity:1;--scrollbar-track:rgb(248 113 113 / var(--un-scrollbar-track-opacity));}
+.scrollbar-track-op-80{--scrollbar-track-opacity:0.8;}"
 `;
 
 exports[`scrollbar > scrollbar custom unit 1`] = `

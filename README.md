@@ -41,7 +41,7 @@ it will generate below css：
 ```css
 /* layer: shortcuts */
 .scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
-.scrollbar{overflow:auto;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;}
+.scrollbar{overflow:auto;--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;}
 .scrollbar-rounded::-webkit-scrollbar-thumb{border-radius:var(--scrollbar-thumb-radius);}
 .scrollbar-rounded::-webkit-scrollbar-track{border-radius:var(--scrollbar-track-radius);}
 .scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
@@ -96,10 +96,10 @@ export default defineConfig({
 |`scrollbarThumbRadius`|`4px`|default scrollbar thumb radius|
 |`scrollbarTrackColor`|`#f5f5f5`|default scrollbar track background color|
 |`scrollbarThumbColor`|`#ddd`|default scrollbar thumb background color|
-|`numberToUnit`|``value => `${value / 4}rem` ``| number to unit
 |`varPrefix`|`''`|the css variable prefix of this preset|
-|`prefix`|`''`|Apply prefix to all utilities and shortcuts|
-|`noCompatible`|`'true'`|if `false`, it use `scrollbar-width` and `scrollbar-color`，work in Firefox, but `scrollbar-h`, `scrollbar-w` and `scrollbar-radius` will not work |
+|`compatible`|`false`|if `true`, use `scrollbar-width` / `scrollbar-color` for Firefox compatibility. In this mode, `scrollbar-h`, `scrollbar-w` and `scrollbar-radius` may not work as expected |
+
+`numberToUnit` and preset-level `prefix` are deprecated and removed in this PR.
 
 for example
 
@@ -107,22 +107,7 @@ for example
 <div class="scrollbar scrollbar-w-4">
 ```
 
-if we use default options，`scrollbar-w-4` will generate `--scrollbar-width: 1rem`
-
-if we set custom `numberToUnit`：
-
-```ts
-export default defineConfig({
-  presets: [
-    presetUno(),
-    presetScrollbar({
-      numberToUnit: value => `${value}px`,
-    }),
-  ],
-})
-```
-
-will generate `--scrollbar-width: 4px`
+`scrollbar-w-4` now follows UnoCSS built-in length parsing and generates `--scrollbar-width: 1rem`.
 
 ## Utilities
 
@@ -132,9 +117,9 @@ will generate `--scrollbar-width: 4px`
 
 ```css
 .scrollbar-thin {
-  scrollbar-width: thin; // if noCompatible is true, remove this line
-  --un-scrollbar-width: 8px;
-  --un-scrollbar-height: 8px;
+  scrollbar-width: thin; // only generated when compatible is true
+  --scrollbar-width: 8px;
+  --scrollbar-height: 8px;
 }
 ```
 
@@ -162,9 +147,13 @@ Make thumb and track have rounded corners
 
 set track or thumb background color
 
+`scrollbar-(track|thumb)-(op|opacity)-<percent>`
+
+set track or thumb color opacity variable
+
 ### size
 
-`scrollbar-(radius|w|h|track-radius|thumb-radius)-(\d+?)([a-zA-Z]*?)`
+`scrollbar-(radius|w|h|track-radius|thumb-radius)-<length>`
 
 |type|description|
 |--|--|
@@ -174,20 +163,15 @@ set track or thumb background color
 |track-radius|set track radius|
 |thumb-radius|set thumb radius|
 
-**Attention，**if it ends with number，the preset will use numberToUnit to generate length with number as params，Otherwise it will use the captured length information directly
+**Attention，**the length parsing follows UnoCSS built-in behavior. Numeric values (for example `4`) are converted to rem units, and explicit units (for example `4px`, `4rem`) are kept as-is.
 
 for example：
 - `scrollbar-w-4` will be `--scrollbar-width: 1rem`
 - `scrollbar-w-4px` will be `--scrollbar-width: 4px`
 - `scrollbar-w-4rem` will be `--scrollbar-width: 4rem`
 
-::: warning
-if set `noCompatible` value `false`，it not work
-:::
-
-## other
-
-base [starter-ts](https://github.com/antfu/starter-ts)
+> warning
+> when `compatible` is `true`, `scrollbar-w`, `scrollbar-h`, and `scrollbar-radius` may not work in compatible engines.
 
 ## License
 

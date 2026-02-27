@@ -3,21 +3,21 @@ import { describe, expect, it } from 'vitest'
 import { presetScrollbar } from '../src'
 
 describe('scrollbar (compatible)', async () => {
-  const generator = await createGenerator({
+  const uno = await createGenerator({
     presets: [
       presetScrollbar({
-        noCompatible: false,
+        compatible: true,
       }),
     ],
   })
 
   it('scrollbar-auto', async () => {
-    const { css } = await generator.generate('scrollbar')
+    const { css } = await uno.generate('scrollbar')
     expect(css).toMatchSnapshot()
   })
 
   it('scrollbar-thin', async () => {
-    const { css } = await generator.generate([
+    const { css } = await uno.generate([
       'scrollbar',
       'scrollbar-thin',
     ])
@@ -25,7 +25,7 @@ describe('scrollbar (compatible)', async () => {
   })
 
   it('scrollbar-none', async () => {
-    const { css } = await generator.generate([
+    const { css } = await uno.generate([
       'scrollbar',
       'scrollbar-none',
     ])

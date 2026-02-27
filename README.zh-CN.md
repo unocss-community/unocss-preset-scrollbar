@@ -41,7 +41,7 @@ export default defineConfig({
 ```css
 /* layer: shortcuts */
 .scrollbar::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-height);}
-.scrollbar{overflow:auto;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;}
+.scrollbar{overflow:auto;--scrollbar-track:#f5f5f5;--scrollbar-thumb:#ddd;--scrollbar-width:8px;--scrollbar-height:8px;--scrollbar-track-radius:4px;--scrollbar-thumb-radius:4px;}
 .scrollbar-rounded::-webkit-scrollbar-thumb{border-radius:var(--scrollbar-thumb-radius);}
 .scrollbar-rounded::-webkit-scrollbar-track{border-radius:var(--scrollbar-track-radius);}
 .scrollbar::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);}
@@ -96,10 +96,10 @@ export default defineConfig({
 |`scrollbarThumbRadius`|`4px`|默认的滚动条滑块的圆角|
 |`scrollbarTrackColor`|`#f5f5f5`|默认的滚动条轨迹的背景色|
 |`scrollbarThumbColor`|`#ddd`|默认的滚动条滑块的背景色|
-|`numberToUnit`|``value => `${value / 4}rem` ``|捕获到的数字转化成单位的方法|
 |`varPrefix`|`''`|该预设生成的`css`变量的前缀|
-|`prefix`|`''`|该预设生成的shortcuts加上前缀|
-|`noCompatible`|`'true'`|如果为 `false` 的话 会使用 `scrollbar-width` 和 `scrollbar-color` 这两个规则，能够在Firefox上兼容, 但是`scrollbar-h`、`scrollbar-w` 以及 `scrollbar-raidus` 会失效 |
+|`compatible`|`false`|如果为 `true` 会启用 `scrollbar-width` 和 `scrollbar-color` 以兼容 Firefox；该模式下 `scrollbar-h`、`scrollbar-w` 和 `scrollbar-radius` 可能无法按预期生效 |
+
+该 PR 中，`numberToUnit` 和预设级 `prefix` 已废弃并移除。
 
 举个例子
 
@@ -107,22 +107,7 @@ export default defineConfig({
 <div class="scrollbar scrollbar-w-4">
 ```
 
-如果你使用默认的配置，`scrollbar-w-4` 将会转化成 `--scrollbar-width: 1rem`
-
-而如果你自定义 `numberToUnit` 项：
-
-```ts
-export default defineConfig({
-  presets: [
-    presetUno(),
-    presetScrollbar({
-      numberToUnit: value => `${value}px`,
-    }),
-  ],
-})
-```
-
-将转化成 `--scrollbar-width: 4px`
+`scrollbar-w-4` 现在遵循 UnoCSS 内建的长度解析规则，生成 `--scrollbar-width: 1rem`。
 
 ## 规则
 
@@ -132,9 +117,9 @@ export default defineConfig({
 
 ```css
 .scrollbar-thin {
-  scrollbar-width: thin; // 如果 noCompatible 为 true, 则不会生成该行
-  --un-scrollbar-width: 8px;
-  --un-scrollbar-height: 8px;
+  scrollbar-width: thin; // 仅在 compatible 为 true 时生成
+  --scrollbar-width: 8px;
+  --scrollbar-height: 8px;
 }
 ```
 
@@ -156,15 +141,19 @@ export default defineConfig({
 
 使滚动条有圆角
 
-### 颜色
+### color
 
 `scrollbar-(track|thumb)-color-<color>`
 
 设置轨迹或滑块的背景色
 
+`scrollbar-(track|thumb)-(op|opacity)-<percent>`
+
+设置轨迹或滑块的透明度变量
+
 ### size
 
-`scrollbar-(radius|w|h|track-radius|thumb-radius)-(\d+?)([a-zA-Z]*?)`
+`scrollbar-(radius|w|h|track-radius|thumb-radius)-<length>`
 
 |对应key|说明|
 |--|--|
@@ -174,7 +163,7 @@ export default defineConfig({
 |track-radius|设置轨迹圆角|
 |thumb-radius|设置滑块圆角|
 
-> **注意**如果以数字结尾，则会通过 `numberToUnit` 转化成带有单位的长度，反之直接生成对应的单位长度。
+> **注意**长度解析遵循 UnoCSS 内建规则：纯数字（如 `4`）会按 rem 规则转换，带单位（如 `4px`、`4rem`）会原样保留。
 
 > **注意**想要设置滚动条的圆角，必须先使用 `scrollbar-rounded`
 
@@ -183,9 +172,9 @@ export default defineConfig({
 - `scrollbar-w-4px` -> `--scrollbar-width: 4px`
 - `scrollbar-w-4rem` -> `--scrollbar-width: 4rem`
 
-## other
+> warning
+> 当 `compatible` 为 `true` 时，`scrollbar-w`、`scrollbar-h` 和 `scrollbar-radius` 可能无法在兼容模式下生效。
 
-base [starter-ts](https://github.com/antfu/starter-ts)
 
 ## License
 

@@ -6,13 +6,13 @@
   "description": "unocss preset for scrollbar",
   "author": "kkopite <kkopitehong@foxmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/action-hong/unocss-preset-scrollbar#readme",
+  "homepage": "https://github.com/unocss-community/unocss-preset-scrollbar#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/action-hong/unocss-preset-scrollbar.git"
+    "url": "git+https://github.com/unocss-community/unocss-preset-scrollbar.git"
   },
   "bugs": {
-    "url": "https://github.com/action-hong/unocss-preset-scrollbar/issues"
+    "url": "https://github.com/unocss-community/unocss-preset-scrollbar/issues"
   },
   "keywords": [
     "unocss",

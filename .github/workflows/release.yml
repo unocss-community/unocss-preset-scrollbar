@@ -13,27 +13,27 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
         with:
-          run_install: false
+          fetch-depth: 0
 
-      - name: Set node LTS
+      - name: Set node LTS ✨
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          registry-url: https://registry.npmjs.org
-          cache: pnpm
+
+      - name: Install pnpm 🚀
+        uses: pnpm/action-setup@v4
+
+      - run: npm i -g npm@latest
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
-      - name: Build
-        run: pnpm run build
+      - name: PNPM build
+        run: pnpm build
 
       - name: Test
-        run: pnpm run test
+        run: pnpm test
 
-      - name: Publish to npm
-        run: pnpm publish --access public --no-git-checks --provenance
+      - name: Publish to NPM
+        run: pnpm -r publish --access public --no-git-checks --provenance
